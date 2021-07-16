@@ -141,6 +141,7 @@
             :style="{
               backgroundColor: 20 - this.total > 0 ? '#555' : '#4cd964',
             }"
+            @click="submitCart()"
           >
             {{
               20 - this.total > 0

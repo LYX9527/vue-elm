@@ -157,6 +157,11 @@ const routes = [
     path: '/recommend',
     component: () => import('../components/shop/recommend.vue')
   },
+  {
+    name: 'submitorder',
+    path: '/submitorder',
+    component: () => import('../components/shop/submitorder.vue')
+  },
 ]
 
 const router = new VueRouter({
