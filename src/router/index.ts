@@ -160,7 +160,7 @@ const routes = [
   {
     name: 'submitorder',
     path: '/submitorder',
-    component: () => import('../components/shop/submitorder.vue')
+    component: () => import('../components/index/submitorder.vue')
   },
 ]
 

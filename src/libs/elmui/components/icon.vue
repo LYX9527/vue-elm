@@ -42,6 +42,7 @@ var map = {
   food7:'icon-pijiu',
   food8:'icon-pisa',
   food9:'icon-regou',
+  location:'icon-location2'
 };
 export default {
   name: "icon",
@@ -67,7 +68,7 @@ export default {
 </script>
 
 <style scoped>
-@import "//at.alicdn.com/t/font_2649304_jcd3b7jxkf.css"; 
+@import "//at.alicdn.com/t/font_2649304_lc6jav3kfdt.css"; 
 /* 彩色 */
 @import '//at.alicdn.com/t/font_2616734_l398wg0nskf.css'; 
 /* 黑白 */

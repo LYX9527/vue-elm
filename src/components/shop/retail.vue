@@ -401,6 +401,7 @@ export default {
         .then((res: any) => {
           console.log(res);
         });
+        (<any>this).skip('submitorder')
     },
     showCart() {
       if ((<any>this).cart[(<any>this).selfemployed.id]) {
