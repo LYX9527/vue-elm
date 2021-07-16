@@ -1,16 +1,16 @@
 # tsvue
 
-## Project setup
+## 第一步 
 ```
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### 第二步 运行项目
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### 第三步 打包为基础文件
 ```
 npm run build
 ```
