@@ -30,6 +30,7 @@ export default {};
 </script>
 
 <style lang='less'>
+
 #cont {
   @comstyle();
   font-size: .8rem;
