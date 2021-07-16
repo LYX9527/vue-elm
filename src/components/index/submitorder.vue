@@ -32,14 +32,55 @@
       </div>
     </div>
     <div class="pay">
-      <div>
+      <div class="commn">
         <div>支付方式</div>
-        <div><div>{{ "在线支付" }}<icon type="arrowRight" /></div></div>
+        <div>
+          <div>{{ "在线支付" }}<icon type="arrowRight" /></div>
+        </div>
       </div>
       <div>
-          <div>红包</div>
-          <div>暂时只在饿了么APP中支持</div>
+        <div>红包</div>
+        <div>暂时只在饿了么APP中支持</div>
       </div>
+    </div>
+    <div class="cart">
+      <div>
+        <div>
+          <img src="../../assets/logo.png" alt="" />
+        </div>
+        <div>啦啦啦啦</div>
+      </div>
+      <div class="food">
+        <div>sdvs</div>
+        <div>x58</div>
+        <div>¥999</div>
+      </div>
+      <div class="foot">
+        <div>配送费</div>
+        <div>¥999</div>
+      </div>
+      <div class="foot">
+        <div>订单{{ "¥999" }}</div>
+        <div style="color: #f60">待支付{{ "¥999" }}</div>
+      </div>
+    </div>
+    <div class="remark">
+      <div>
+        <div>订单备注</div>
+        <div>
+          <div>{{ "口味偏好等" }}<icon type="arrowRight" /></div>
+        </div>
+      </div>
+      <div>
+        <div>发票抬头</div>
+        <div>
+          <div>{{ "不需要开发票" }}<icon type="arrowRight" /></div>
+        </div>
+      </div>
+    </div>
+    <div class="order">
+        <div>待支付¥999</div>
+        <div>确认下单</div>
     </div>
   </div>
 </template>
@@ -175,27 +216,150 @@ export default {};
           &:nth-child(2) {
             width: 25%;
             position: relative;
-            &>div{
-                color:#888;
-                position: absolute;
-                right: 0;
+            & > div {
+              color: #888;
+              position: absolute;
+              right: 0;
             }
           }
         }
       }
       &:nth-child(2) {
-          display: flex;
-          flex-wrap: nowrap;
-          line-height:3rem;
-          &>div{
-              color:#888;
-              width: 50%;
-              &:nth-child(2){
-                  text-align: right;
-              }
+        display: flex;
+        flex-wrap: nowrap;
+        line-height: 3rem;
+        & > div {
+          color: #888;
+          width: 50%;
+          &:nth-child(2) {
+            text-align: right;
           }
+        }
       }
     }
+  }
+  .cart {
+    width: 100%;
+    margin-top: 0.8rem;
+    background-color: @cff;
+    height: auto;
+    & > div {
+      display: flex;
+      flex-wrap: nowrap;
+      &:nth-child(1) {
+        width: 100%;
+        height: 4rem;
+        padding: 0;
+        background-color: @cff;
+
+        border-bottom: @mborder;
+        & > div {
+          &:nth-child(1) {
+            width: 20%;
+            position: relative;
+            img {
+              position: absolute;
+              left: 1rem;
+              top: 1rem;
+              width: 50%;
+            }
+          }
+          &:nth-child(2) {
+            width: 80%;
+            line-height: 4rem;
+            text-align: left;
+          }
+        }
+      }
+    }
+    .food {
+      height: 3rem;
+      box-sizing: border-box;
+      padding: 0 1rem;
+      & > div {
+        line-height: 3rem;
+        &:nth-child(1) {
+          width: 60%;
+        }
+        &:nth-child(2) {
+          width: 20%;
+          color: #f60;
+          text-align: right;
+        }
+        &:nth-child(3) {
+          width: 20%;
+          text-align: right;
+        }
+      }
+    }
+    .foot {
+      height: 3rem;
+      padding: 0 1rem;
+      & > div {
+        line-height: 3rem;
+        &:nth-child(1) {
+          width: 60%;
+        }
+        &:nth-child(2) {
+          width: 40%;
+          text-align: right;
+        }
+      }
+    }
+  }
+  .remark {
+    width: 100%;
+    background-color: @cff;
+    margin-top: 0.8rem;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    & > div {
+      display: flex;
+      flex-wrap: nowrap;
+      width: 100%;
+      height: 3rem;
+      line-height: 3rem;
+      & > div {
+        &:nth-child(1) {
+          width: 60%;
+        }
+        &:nth-child(2) {
+          width: 40%;
+          position: relative;
+          & > div {
+            color: #888;
+            position: absolute;
+            right: 0;
+          }
+        }
+      }
+    }
+  }
+  .order {
+      width: 100%;
+      height: 3rem;
+      line-height: 3rem;
+      position: fixed;
+      bottom: 0;
+      z-index: 2;
+      color:@cff;
+      display: flex;
+      flex-wrap: nowrap;
+      &>div{
+          &:nth-child(1) {
+              width: 70%;
+              background-color: #3c3c3c;
+              box-sizing: border-box;
+              padding-left:1.5rem;
+              font-size:.9rem;
+          }
+          &:nth-child(2) {
+              width: 30%;
+              background-color: #56d176;
+              text-align: center;
+              font-size:1rem;
+          }
+      }
   }
 }
 </style>
