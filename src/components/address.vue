@@ -9,12 +9,12 @@
         <icon :type="status ? 'login' : 'register'" class="icon_fs" />
       </div>
     </div>
-    <div style="width:100%;height:2.9rem;"></div>
+    <div style="width: 100%; height: 2.9rem"></div>
     <div class="city_title">
       <div ct_top>
         <span>当前定位城市：</span> <span>定位不准时，请在城市列表中选择</span>
       </div>
-      <div @click='chct(location)'>
+      <div @click="chct(location)">
         <span>{{ location.name }}</span> <span><icon type="arrowRight" /></span>
       </div>
     </div>
@@ -49,28 +49,34 @@ export default {
   methods: {
     ...mapMutations(["changeCitys", "chLocation"]),
     getLocation() {
-      (this as any).$http({
-        method: "get",
-        url: "https://elm.cangdu.org/v1/cities?type=guess",
-      }).then((res: { data: any; }) => {
-        (this as any).chLocation(res.data);
-      });
+      (this as any)
+        .$http({
+          method: "get",
+          url: "https://elm.cangdu.org/v1/cities?type=guess",
+        })
+        .then((res: { data: any }) => {
+          (this as any).chLocation(res.data);
+        });
     },
     getHot() {
-      (this as any).$http({
-        method: "get",
-        url: "https://elm.cangdu.org/v1/cities?type=hot",
-      }).then((res: { data: any; }) => {
-        (this as any).hotCitys = res.data;
-      });
+      (this as any)
+        .$http({
+          method: "get",
+          url: "https://elm.cangdu.org/v1/cities?type=hot",
+        })
+        .then((res: { data: any }) => {
+          (this as any).hotCitys = res.data;
+        });
     },
     getallCitys() {
-      (this as any).$http({
-        method: "get",
-        url: "https://elm.cangdu.org/v1/cities?type=group",
-      }).then((res: { data: any; }) => {
-        (this as any).changeCitys(res.data);
-      });
+      (this as any)
+        .$http({
+          method: "get",
+          url: "https://elm.cangdu.org/v1/cities?type=group",
+        })
+        .then((res: { data: any }) => {
+          (this as any).changeCitys(res.data);
+        });
     },
     skip(name: any) {
       (this as any).$router.push({
@@ -93,7 +99,7 @@ export default {
     (this as any).getallCitys();
   },
   filters: {
-    texthidden(text: string|any[]) {
+    texthidden(text: string | any[]) {
       if (text.length > 6) {
         return text.toString().substring(0, 5) + "...";
       } else {
