@@ -1,0 +1,349 @@
+@mcolor: #3092e8;
+@wc: #fff;
+@cef:#efefef;
+@ccc:#ccc;
+@cff:#fff;
+@mborder:1px solid @cef;
+@comstyle: {
+    .icon_fs {
+      color: #fff;
+      font-size: 1.4rem;
+      &:nth-of-type(1) {
+        width: 4rem;
+      }
+      &:nth-of-type(2) {
+        width: 4rem;
+      }
+    }
+    .ic{
+      width: 4rem;
+    }
+    .nav {
+      background-color: @mcolor;
+      display: flex;
+      position: fixed;
+      top: 0;
+      flex-wrap: nowrap;
+      z-index: 999;
+      height: 2.9rem;
+      text-align: center;
+      line-height: 2.9rem;
+      color: @wc;
+      font-size: 1.1rem;
+      .nav_title {
+        width: 16rem;
+      }
+    }
+  };
+@search: {
+  .ic {
+    width: 4rem;
+    font-size: .8rem;
+  }
+  .schcont_title {
+    width: 100%;
+    height: 3rem;
+    background-color: @cef;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    line-height: 3rem;
+    font-size: 0.9rem;
+    color: #888;
+  }
+  .history {
+    width: 100%;
+    .his_title {
+      width: 100%;
+      height: 3rem;
+      text-align: left;
+      box-sizing: border-box;
+      padding: 0 1rem;
+      line-height: 3rem;
+      font-size: 0.9rem;
+      background-color: @cef;
+    }
+    .his_cont {
+      font-size: 0.9rem;
+      width: 100%;
+      height: 3rem;
+      display: flex;
+      border-bottom: @mborder;
+      background-color: @cff;
+      div {
+        &:nth-child(1) {
+          width: 90%;
+          height: 100%;
+          line-height: 3rem;
+          box-sizing: border-box;
+          padding: 0 1rem;
+        }
+        &:nth-child(2) {
+          width: 10%;
+          height: 100%;
+          text-align: center;
+          line-height: 3rem;
+        }
+      }
+    }
+    .his_footer {
+      background-color: @cff;
+      text-align: center;
+      line-height: 3rem;
+      height: 3rem;
+      width: 100%;
+      border-bottom: @mborder;
+      font-size: 1rem;
+      color: @mcolor;
+    }
+  }
+};
+@redpacket:{
+  .packbody {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 1rem;
+    > div {
+      display: flex;
+      flex-wrap: wrap;
+      height: 6rem;
+      background-color: #fff;
+      border-radius: 5px;
+      overflow: hidden;
+      margin-bottom: 1rem;
+      ul {
+        position: absolute;
+        width: 91%;
+        height: 0.5rem;
+        left: 1.15rem;
+        li {
+          display: inline-block;
+          background-color: @cff;
+          border-radius: 50%;
+          width: 0.5rem;
+          height: 0.5rem;
+          margin: 0 0.15rem;
+        }
+      }
+      > div {
+        &:nth-child(1) {
+          width: 100%;
+          height: 0.5rem;
+          background-color: #ff453d;
+        }
+        &:nth-child(2) {
+          width: 100%;
+          height: 5.5rem;
+          padding: 1rem 0;
+          box-sizing: border-box;
+          display: flex;
+          flex-wrap: nowrap;
+          padding: 0.525rem;
+          > div {
+            font-size: 0.6rem;
+            &:nth-child(1) {
+              width: 20%;
+              display: flex;
+              flex-wrap: wrap;
+              p {
+                width: 100%;
+                text-align: center;
+                &:nth-child(1) {
+                  height: 60%;
+                  line-height: 2.4rem;
+                  span {
+                    color: #ff453d;
+                    &:nth-child(1),
+                    &:nth-child(3) {
+                      font-size: 0.9rem;
+                    }
+                    &:nth-child(2) {
+                      font-size: 2rem;
+                    }
+                  }
+                }
+                &:nth-child(2) {
+                  line-height: 1.6rem;
+                  color: #888;
+                }
+              }
+            }
+            &:nth-child(2) {
+              width: 60%;
+              box-sizing: border-box;
+              border-left: @mborder;
+              padding: 0 1rem;
+              display: flex;
+              flex-wrap: wrap;
+              h1 {
+                width: 100%;
+                font-size: 1rem;
+              }
+              p {
+                color: #888;
+              }
+            }
+            &:nth-child(3) {
+              width: 20%;
+              text-align: center;
+              line-height: 4rem;
+              font-size: 1.5rem;
+              color: #ff453d;
+            }
+          }
+        }
+      }
+    }
+  }
+};
+@shopping:{
+  .content {
+    width: 100%;
+    background-color: @cff;
+    .merchant {
+      height: 7rem;
+      display: flex;
+      flex-wrap: nowrap;
+      box-sizing: border-box;
+      border-bottom: @mborder;
+      .img {
+        height: 7rem;
+        width: 20%;
+        img {
+          width: 80%;
+          height: 60%;
+          margin: 20% 10%;
+        }
+      }
+      .cont_right {
+        width: 80%;
+        font-size: 0.5rem;
+        div {
+          padding: 0;
+          width: 100%;
+          font-size: 0.5rem;
+          line-height: 2.2rem;
+        }
+        .top {
+          display: flex;
+          div {
+            height: 100%;
+            &:nth-child(1) {
+              span {
+                border: @mborder;
+                color: #aaa;
+                &:nth-of-type(1) {
+                  background-color: #ffd930;
+                  color: #000;
+                  box-sizing: border-box;
+                  height: 0.5rem;
+                  padding: 0.02rem;
+                  border: none;
+                }
+                &:nth-of-type(2) {
+                  font-size: 1.2rem;
+                  color: #000;
+                  border: none;
+                }
+              }
+            }
+            &:nth-of-type(2) {
+              transform: scale(0.8);
+              text-align: right;
+              box-sizing: border-box;
+              color: @ccc;
+              span {
+                border: 1px solid @ccc;
+                padding: 0 0.1rem;
+              }
+            }
+          }
+        }
+        .middie {
+          color: #aaa;
+          display: flex;
+          position: relative;
+          div {
+            height: 100%;
+            position: relative;
+            &:nth-of-type(1) {
+              position: relative;
+              span {
+                position: absolute;
+                top: 0;
+                right: 0;
+              }
+            }
+            &:nth-of-type(2) {
+              color: #aaa;
+              position: relative;
+              p {
+                transform: scale(0.8);
+                position: absolute;
+                top: 0;
+                padding: 0;
+                text-align: right;
+                span {
+                  height: 1rem;
+                  padding: 0.05rem;
+                  box-sizing: border-box;
+                  &:nth-child(1) {
+                    background-color: @mcolor;
+                    color: @cff;
+                    border: 1px solid @cff;
+                  }
+                  &:nth-child(2) {
+                    background-color: @cff;
+                    color: @mcolor;
+                    border: 1px solid @mcolor;
+                  }
+                }
+              }
+            }
+            .ff {
+              position: absolute;
+              right: 4.8rem;
+              top: 0;
+              font-size: 0.15rem;
+              width: 20%;
+            }
+          }
+        }
+        .buttom {
+          display: flex;
+          div:nth-child(2) {
+            display: flex;
+            height: 100%;
+            span:nth-child(2) {
+              color: @mcolor;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@temstyle: {
+  width: 100%;
+  background-color: @cff;
+  display: flex;
+  flex-wrap: wrap;
+  div {
+    width: 100%;
+    border: @mborder;
+    display: flex;
+    flex-wrap: nowrap;
+    p {
+      width: 50%;
+      height: 100%;
+      text-align: right;
+      line-height: 3rem;
+      box-sizing: border-box;
+      padding: 0 1rem;
+      font-size: 1rem;
+      &:nth-child(1) {
+        text-align: left;
+      }
+    }
+  }
+};
