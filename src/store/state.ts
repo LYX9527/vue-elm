@@ -12,4 +12,5 @@ export default {
     nowservermsg:'',//当前展示信息
     cart:{},//购物车
     food:{},//单个商品信息
+    carts:[],
 }

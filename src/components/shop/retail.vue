@@ -128,7 +128,12 @@
         <div class="foot" :style="{ zIndex: alert ? 2 : 3000 }">
           <div @click="show = !show">
             <div>
-              <transition appear name="animate__animated" enter-active-class="animate__shakeY"  leave-active-class='animate__hinge'>
+              <transition
+                appear
+                name="animate__animated"
+                enter-active-class="animate__shakeY"
+                leave-active-class="animate__hinge"
+              >
                 <div v-show="kit"><icon type="cart" /></div>
               </transition>
             </div>
@@ -352,11 +357,11 @@ export default {
       score: "",
       grade: "",
       gradeid: 0,
-      kit:true,
+      kit: true,
     };
   },
   methods: {
-    ...mapMutations(["chCart", "clearCart", "chFood"]),
+    ...mapMutations(["chCart", "clearCart", "chFood", "saveCarts"]),
     getRest(id = 3276) {
       (<any>this)
         .$http({
@@ -387,21 +392,8 @@ export default {
       (<any>this).kit = !(<any>this).kit;
     },
     submitCart() {
-      let { id, location } = (<any>this).selfemployed;
-      (<any>this)
-        .$http({
-          method: "post",
-          url: "https://elm.cangdu.org/v1/carts/checkout",
-          data: {
-            restaurant_id: id,
-            geohash: `${location[0]},${location[1]}`,
-            entities: [(<any>this).carts],
-          },
-        })
-        .then((res: any) => {
-          console.log(res);
-        });
-        (<any>this).skip('submitorder')
+      (<any>this).saveCarts((<any>this).carts)
+      (<any>this).skip("submitorder");
     },
     showCart() {
       if ((<any>this).cart[(<any>this).selfemployed.id]) {

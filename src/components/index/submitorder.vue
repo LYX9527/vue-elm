@@ -79,14 +79,46 @@
       </div>
     </div>
     <div class="order">
-        <div>待支付¥999</div>
-        <div>确认下单</div>
+      <div>待支付¥999</div>
+      <div>确认下单</div>
     </div>
   </div>
 </template>
 
-<script>
-export default {};
+<script lang='ts'>
+import { mapState, mapMutations } from "vuex";
+export default {
+  data() {
+    return {
+      cart: [],
+    };
+  },
+  methods: {
+    submit() {
+      let { id, location } = (<any>this).selfemployed;
+      (<any>this)
+        .$http({
+          method: "post",
+          url: "https://elm.cangdu.org/v1/carts/checkout",
+          data: {
+            restaurant_id: id,
+            geohash: `${location[0]},${location[1]}`,
+            entities: [(<any>this).carts],
+          },
+        })
+        .then((res: any) => {
+          console.log(res);
+        });
+    },
+  },
+  computed: {
+    ...mapState(["selfemployed", "carts"]),
+  },
+  created() {
+    (<any>this).cart = (<any>this).carts;
+    console.log((<any>this).cart);
+  },
+};
 </script>
 
 <style lang='less'>
@@ -336,30 +368,30 @@ export default {};
     }
   }
   .order {
-      width: 100%;
-      height: 3rem;
-      line-height: 3rem;
-      position: fixed;
-      bottom: 0;
-      z-index: 2;
-      color:@cff;
-      display: flex;
-      flex-wrap: nowrap;
-      &>div{
-          &:nth-child(1) {
-              width: 70%;
-              background-color: #3c3c3c;
-              box-sizing: border-box;
-              padding-left:1.5rem;
-              font-size:.9rem;
-          }
-          &:nth-child(2) {
-              width: 30%;
-              background-color: #56d176;
-              text-align: center;
-              font-size:1rem;
-          }
+    width: 100%;
+    height: 3rem;
+    line-height: 3rem;
+    position: fixed;
+    bottom: 0;
+    z-index: 2;
+    color: @cff;
+    display: flex;
+    flex-wrap: nowrap;
+    & > div {
+      &:nth-child(1) {
+        width: 70%;
+        background-color: #3c3c3c;
+        box-sizing: border-box;
+        padding-left: 1.5rem;
+        font-size: 0.9rem;
       }
+      &:nth-child(2) {
+        width: 30%;
+        background-color: #56d176;
+        text-align: center;
+        font-size: 1rem;
+      }
+    }
   }
 }
 </style>

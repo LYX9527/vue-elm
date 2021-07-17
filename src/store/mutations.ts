@@ -122,5 +122,8 @@ export default {
     //改变当前的商品
     chFood(state: { food: { [key: string]: any } }, data: any) {
         state.food = data
+    },
+    saveCarts(state:any,data: []) {
+        state.carts = data;
     }
 }
