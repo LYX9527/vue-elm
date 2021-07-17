@@ -5,14 +5,14 @@
         <icon type="arrowLeft" class="icon_fs" />
       </div>
       <span class="nav_title">确认订单</span>
-      <div class="ic">
+      <div class="ic" @click="skip('personal')">
         <icon type="peronal" class="icon_fs" />
       </div>
     </div>
     <div style="width: 100%; height: 2.9rem"></div>
     <div class="address">
       <div>
-        <icon type="location" />
+        <icon type="phone" />
       </div>
       <div>
         <p><span>132</span> <span>先生</span> <span>15858585858</span></p>
@@ -46,22 +46,22 @@
     <div class="cart">
       <div>
         <div>
-          <img src="../../assets/logo.png" alt="" />
+          <img :src="'https://elm.cangdu.org/img/' + selfemployed.image_path" alt="" />
         </div>
-        <div>啦啦啦啦</div>
+        <div>{{selfemployed.name}}</div>
       </div>
-      <div class="food">
-        <div>sdvs</div>
-        <div>x58</div>
-        <div>¥999</div>
+      <div class="food" v-for="(v, i) in cart" :key="i">
+        <div>{{ v.name }}</div>
+        <div>x{{ v.quantity }}</div>
+        <div>¥{{ v.price }}</div>
       </div>
       <div class="foot">
         <div>配送费</div>
-        <div>¥999</div>
+        <div>¥5</div>
       </div>
       <div class="foot">
-        <div>订单{{ "¥999" }}</div>
-        <div style="color: #f60">待支付{{ "¥999" }}</div>
+        <div>订单 {{ " ¥" + total }}</div>
+        <div style="color: #f60">待支付{{ " ¥" + (total + 5) }}</div>
       </div>
     </div>
     <div class="remark">
@@ -78,9 +78,10 @@
         </div>
       </div>
     </div>
+    <div style="width:100%;height:3rem;"></div>
     <div class="order">
-      <div>待支付¥999</div>
-      <div>确认下单</div>
+      <div>待支付¥{{ total }}</div>
+      <div @click="submit()">确认下单</div>
     </div>
   </div>
 </template>
@@ -91,6 +92,7 @@ export default {
   data() {
     return {
       cart: [],
+      total: 0,
     };
   },
   methods: {
@@ -116,7 +118,10 @@ export default {
   },
   created() {
     (<any>this).cart = (<any>this).carts;
-    console.log((<any>this).cart);
+    (<any>this).total = 0;
+    (<any>this).cart.forEach((item: any) => {
+      (<any>this).total += item.price * item.quantity;
+    });
   },
 };
 </script>

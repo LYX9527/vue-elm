@@ -392,7 +392,7 @@ export default {
       (<any>this).kit = !(<any>this).kit;
     },
     submitCart() {
-      (<any>this).saveCarts((<any>this).carts)
+      (<any>this).saveCarts((<any>this).carts);
       (<any>this).skip("submitorder");
     },
     showCart() {
