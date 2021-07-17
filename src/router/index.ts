@@ -162,6 +162,11 @@ const routes = [
     path: '/submitorder',
     component: () => import('../components/index/submitorder.vue')
   },
+  {
+    name: 'checkaddress',
+    path: '/checkaddress',
+    component: () => import('../components/index/checkaddress.vue')
+  },
 ]
 
 const router = new VueRouter({

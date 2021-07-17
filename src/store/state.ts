@@ -13,4 +13,5 @@ export default {
     cart:{},//购物车
     food:{},//单个商品信息
     carts:[],
+    subadd:{}
 }

@@ -10,13 +10,13 @@
       </div>
     </div>
     <div style="width: 100%; height: 2.9rem"></div>
-    <div class="address">
+    <div class="address" @click="skip('checkaddress')">
       <div>
         <icon type="phone" />
       </div>
       <div>
-        <p><span>132</span> <span>先生</span> <span>15858585858</span></p>
-        <p><span>无</span> <span>12313223</span></p>
+        <p><span>{{subadd.name}}</span> <span>{{subadd.sex?'先生':'女士'}}</span> <span>{{subadd.phone}}</span></p>
+        <p><span>{{ subadd.tag }}</span> <span>{{subadd.address_detail}}</span></p>
       </div>
       <div>
         <icon type="arrowRight" />
@@ -114,7 +114,7 @@ export default {
     },
   },
   computed: {
-    ...mapState(["selfemployed", "carts"]),
+    ...mapState(["selfemployed", "carts",'subadd']),
   },
   created() {
     (<any>this).cart = (<any>this).carts;

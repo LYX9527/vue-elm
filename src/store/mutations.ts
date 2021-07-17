@@ -123,7 +123,13 @@ export default {
     chFood(state: { food: { [key: string]: any } }, data: any) {
         state.food = data
     },
+    //改变当前结算时数据
     saveCarts(state: { carts: any[] }, data: []) {
         state.carts = data;
+    },
+    //改变提交订单时的地址
+    chSubAdd(state: { subadd: any }, data: any) {
+        state.subadd = data;
     }
+
 }
