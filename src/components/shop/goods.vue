@@ -39,8 +39,9 @@ export default {
 };
 </script>
 
-<style lang='less'>
+<style lang='less' scoped>
 #cont {
+  font-size:.8rem;
   @comstyle();
   .conent {
     img {

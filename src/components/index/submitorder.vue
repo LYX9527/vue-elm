@@ -126,7 +126,7 @@ export default {
 };
 </script>
 
-<style lang='less'>
+<style lang='less' scoped>
 #cont {
   @comstyle();
   font-size: 0.8rem;
